@@ -23,6 +23,9 @@ body {
 }
 h1{
   min-height: 55px;
+  min-width:800px;
+  text-align: center;
+  /* background: red; */
 }
 .Container {
   display: flex;
