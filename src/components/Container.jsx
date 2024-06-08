@@ -8,7 +8,6 @@ import BoxReveal from "@/components/magicui/box-reveal";
 import Square from "./Square";
 
 const Container = () => {
-  const initialGradient = "from-purple-500 to-pink-500"; // Initial linear gradient
   let duration = 2;
   useEffect(() => {
     gsap.from(".card", {
@@ -63,12 +62,12 @@ const Container = () => {
           className="absolute inset-0"
         />
       </div>
-      <div className="relative z-1 w-full max-w-3xl p-8 border border-slate-400 rounded-xl shadow-lg bg-[var(--Theme--Color)] backdrop-filter backdrop-blur-md backdrop-saturate-180 h-[60dvh]">
+      <div className="card relative z-1 w-full max-w-3xl p-8 border border-slate-400 rounded-xl shadow-lg bg-[var(--Theme--Color)] backdrop-filter backdrop-blur-md backdrop-saturate-180 h-[60dvh]">
         <Square hw={100} t={{ x: "-100%", y: "-80%" }} name={"1"} />
         <div className="absolute inset-0 z-0">
           <RetroGrid className="absolute inset-0" />
         </div>
-        <div className=" flex flex-col justify-center items-center h-full w-full">
+        <div className="text--card flex flex-col justify-center items-center h-full w-full">
           <BoxReveal boxColor={"#a855f7"} duration={1}>
             <h1 className="text-5xl font-medium font-[900] tracking-tighter text-black dark:text-white relative">
               <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent pointer-events-none">
