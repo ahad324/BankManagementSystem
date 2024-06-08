@@ -7,8 +7,6 @@ interface GridPatternProps {
   height?: number;
   x?: number;
   y?: number;
-  stroke?: string; // New prop for stroke color
-  fill?: string; // New prop for fill color
   strokeDasharray?: any;
   numSquares?: number;
   className?: string;
@@ -28,7 +26,6 @@ export function GridPattern({
   maxOpacity = 0.5,
   duration = 4,
   repeatDelay = 0.5,
-  stroke = "rgba(255, 255, 255, 0.3)", // Default stroke color
   fill = "rgba(255, 255, 255, 0.5)", // Default fill color
   ...props
 }: GridPatternProps) {
@@ -114,7 +111,7 @@ export function GridPattern({
             d={`M.5 ${height}V.5H${width}`}
             fill="none"
             strokeDasharray={strokeDasharray}
-            stroke={stroke} // Use stroke prop
+            stroke="transparent" // Use stroke prop
           />
         </pattern>
       </defs>
@@ -136,8 +133,8 @@ export function GridPattern({
             height={height - 1}
             x={x * width + 1}
             y={y * height + 1}
-            fill={fill} // Use fill prop
             strokeWidth="0"
+            className={"bg-boxes"}
           />
         ))}
       </svg>

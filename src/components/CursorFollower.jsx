@@ -23,6 +23,7 @@ const CursorFollower = () => {
   return (
     <div
       ref={followerRef}
+      className="cursor"
       style={{
         position: "fixed",
         left: 0,
@@ -31,7 +32,6 @@ const CursorFollower = () => {
         height: "30px",
         background: "transparent",
         borderRadius: "50%",
-        border: "1px solid white",
         pointerEvents: "none",
         transform: "translate(-50%, -50%)",
         zIndex: 1000,

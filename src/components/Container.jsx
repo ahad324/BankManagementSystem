@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import RetroGrid from "@/components/magicui/retro-grid";
@@ -6,6 +6,7 @@ import ShimmerButton from "@/components/magicui/shimmer-button";
 import CursorFollower from "./CursorFollower";
 import BoxReveal from "@/components/magicui/box-reveal";
 import Square from "./Square";
+import ThemeToggler from "./ThemeToggler";
 
 const Container = () => {
   let duration = 2;
@@ -48,21 +49,20 @@ const Container = () => {
 
   return (
     <div className="Container relative h-screen overflow-hidden flex items-center justify-center">
+      <ThemeToggler />
       <CursorFollower />
       <div className="absolute inset-0 z-0">
         <AnimatedGridPattern
           width="105"
           height="105"
-          fill="#A07CFE"
-          stroke="transparent"
           numSquares={30}
           maxOpacity={0.5}
-          duration={3}
+          duration={2}
           repeatDelay={1}
           className="absolute inset-0"
         />
       </div>
-      <div className="card relative z-1 w-full max-w-3xl p-8 border border-slate-400 rounded-xl shadow-lg bg-[var(--Theme--Color)] backdrop-filter backdrop-blur-md backdrop-saturate-180 h-[370px]">
+      <div className="card relative z-1 w-full max-w-3xl p-8 rounded-xl bg-[var(--Dark--Theme--Color)] backdrop-filter backdrop-blur-md backdrop-saturate-180 h-[370px]">
         <Square hw={100} t={{ x: "-100%", y: "-80%" }} name={"1"} />
         <div className="absolute inset-0 z-0">
           <RetroGrid className="absolute inset-0" />
@@ -70,14 +70,11 @@ const Container = () => {
         <div className="text--card flex flex-col justify-center items-center h-full w-full">
           <BoxReveal boxColor={"#a855f7"} duration={1}>
             <h1 className="text-5xl font-medium font-[900] tracking-tighter text-black dark:text-white relative">
-              <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent pointer-events-none">
-                Bank Management{" "}
-              </span>
+              <span className="GradientText">Bank Management </span>
               <i
-                className="text-transparent"
+                className="Hollow--Text text-transparent"
                 style={{
-                  WebkitTextStrokeWidth: "1px",
-                  WebkitTextStrokeColor: "white",
+                  WebkitTextStrokeWidth: "1.5px",
                   position: "relative",
                   zIndex: 2,
                 }}

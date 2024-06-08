@@ -3,29 +3,95 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --Theme--Color: #050315;
+  --Dark--Theme--Color: #050315;
+  --Light--Theme--Color:  linear-gradient(220.55deg, #FFF6EB 0%, #DFD1C5 100%);;
+  --Light--Theme--TextColor: black;
+  --Light--Theme--ContrastColor: var(--Light--Theme--TextColor);
+  --Shadow: 0px 10px 22px 8px rgba(0, 0, 0, 0.1);
+  --Gradient--For--LightTheme: linear-gradient(to right, #8c1ef3, #e20f79);
+  --Gradient--For--DarkTheme: linear-gradient(to right, #a855f7, #ec4899);
+  --bgBoxes-fill--LightTheme: var(--Light--Theme--ContrastColor);
+  --bgBoxes-fill--DarkTheme: #a07cfe;
 }
 * {
   font-family: "Poppins", sans-serif;
+  font-weight: 900;
   color: whitesmoke;
 }
 body {
-  background: var(--Theme--Color);
+  background: var(--Dark--Theme--Color);
   min-height: 100dvh;
   height: 100%;
+  transition: background 0.5s ease;
+}
+body.light-theme {
+  background: var(--Light--Theme--Color);
+  .bg-boxes {
+    fill: var(--bgBoxes-fill--LightTheme);
+  }
+  .GradientText {
+    background: var(--Gradient--For--LightTheme);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .Square {
+    border: 1px solid white;
+  }
+  p {
+    color: var(--Light--Theme--TextColor);
+  }
+  .Hollow--Text {
+    -webkit-text-stroke: 1px var(--Light--Theme--TextColor);
+  }
+  .card {
+    background: var(--Light--Theme--Color);
+    border-color: var(--Light--Theme--ContrastColor);
+  }
+  .cursor {
+    border: 1px solid var(--Light--Theme--ContrastColor);
+  }
+  .Square {
+    border-color: var(--Light--Theme--ContrastColor);
+  }
+  .animate-grid {
+    background-image: linear-gradient(to right, rgb(0 0 0) 1px, transparent 0),
+      linear-gradient(to bottom, rgb(0 0 0) 1px, transparent 0);
+  }
+}
+.cursor {
+  border: 1px solid white;
+}
+.bg-boxes {
+  fill: var(--bgBoxes-fill--DarkTheme);
+}
+.GradientText {
+  background: var(--Gradient--For--DarkTheme);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.card {
+  box-shadow: var(--Shadow);
+  border: 1px solid;
+  border-color: var(--Light--Theme--Color);
+}
+.Hollow--Text {
+  -webkit-text-stroke-color: white;
 }
 .Square {
   border: 1px solid white;
   border-radius: 5px;
   position: absolute;
-  /* backdrop-filter: blur(50px); */
   z-index: 2;
+  box-shadow: var(--Shadow);
 }
-h1{
+h1 {
   min-height: 55px;
-  min-width:800px;
+  min-width: 650px;
   text-align: center;
-  /* background: red; */
+}
+p{
+  font-weight: 400;
 }
 .Container {
   display: flex;
