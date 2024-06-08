@@ -12,6 +12,7 @@
   --Gradient--For--DarkTheme: linear-gradient(to right, #a855f7, #ec4899);
   --bgBoxes-fill--LightTheme: var(--Light--Theme--ContrastColor);
   --bgBoxes-fill--DarkTheme: #a07cfe;
+  --IntroScreen--Background:#130e35;
 }
 * {
   font-family: "Poppins", sans-serif;
@@ -23,6 +24,7 @@ body {
   min-height: 100dvh;
   height: 100%;
   transition: background 0.5s ease;
+  overflow: hidden;
 }
 body.light-theme {
   background: var(--Light--Theme--Color);
@@ -57,6 +59,10 @@ body.light-theme {
     background-image: linear-gradient(to right, rgb(0 0 0) 1px, transparent 0),
       linear-gradient(to bottom, rgb(0 0 0) 1px, transparent 0);
   }
+}
+.intro-screen{
+  background: var(--IntroScreen--Background);
+  box-shadow: var(--Shadow);
 }
 .cursor {
   border: 1px solid white;

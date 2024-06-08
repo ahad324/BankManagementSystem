@@ -5,7 +5,6 @@ const ThemeToggler = () => {
 
   const handleToggle = () => {
     setIsChecked(!isChecked);
-    // Toggle theme here or dispatch an action to change the theme
     if (isChecked) {
       document.body.classList.remove("light-theme");
     } else {
