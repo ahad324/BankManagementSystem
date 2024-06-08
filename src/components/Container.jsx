@@ -62,7 +62,7 @@ const Container = () => {
           className="absolute inset-0"
         />
       </div>
-      <div className="card relative z-1 w-full max-w-3xl p-8 border border-slate-400 rounded-xl shadow-lg bg-[var(--Theme--Color)] backdrop-filter backdrop-blur-md backdrop-saturate-180 h-[60dvh]">
+      <div className="card relative z-1 w-full max-w-3xl p-8 border border-slate-400 rounded-xl shadow-lg bg-[var(--Theme--Color)] backdrop-filter backdrop-blur-md backdrop-saturate-180 h-[370px]">
         <Square hw={100} t={{ x: "-100%", y: "-80%" }} name={"1"} />
         <div className="absolute inset-0 z-0">
           <RetroGrid className="absolute inset-0" />

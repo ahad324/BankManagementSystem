@@ -22,7 +22,7 @@ body {
   z-index: 2;
 }
 h1{
-  min-height: 9dvh;
+  min-height: 55px;
 }
 .Container {
   display: flex;
