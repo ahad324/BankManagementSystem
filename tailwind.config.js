@@ -9,6 +9,7 @@ export default {
       animation: {
         'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
         slide: 'slide var(--speed) ease-in-out infinite alternate',
+        grid: "grid 15s linear infinite",
       },
       keyframes: {
         'spin-around': {
@@ -29,6 +30,10 @@ export default {
           to: {
             transform: 'translate(calc(100cqw - 100%), 0)',
           },
+        },
+        grid: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
         },
       },
     },
