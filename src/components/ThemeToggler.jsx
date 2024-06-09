@@ -13,7 +13,7 @@ const ThemeToggler = () => {
   };
 
   return (
-    <div className="absolute top-3">
+    <div className="absolute top-5 right-5">
       <label className="switch">
         <span className="sun">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
