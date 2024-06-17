@@ -60,11 +60,12 @@ const Container = () => {
   }, []);
 
   const downloadSource = () => {
-    console.log("Download Source Code");
-  };
-
-  const downloadExecutable = () => {
-    console.log("Download Executable File");
+    const link = document.createElement("a");
+    link.href = "/BankManagementSystem.zip"; // The path to your ZIP file in the public directory
+    link.download = "BankManagementSystem.zip";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -90,7 +91,7 @@ const Container = () => {
             <RetroGrid className="absolute inset-0" />
           </div>
           <div className="text--card flex flex-col justify-center items-center h-full w-full">
-            <h1 className="text-5xl font-medium font-[900] tracking-tighter text-black dark:text-white relative">
+            <h1 className="text-5xl font-[900] tracking-tighter text-black dark:text-white relative">
               <span className="GradientText">Bank Management </span>
               <i
                 className="Hollow--Text text-transparent"
@@ -104,24 +105,16 @@ const Container = () => {
               </i>
             </h1>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Accusantium impedit iure cum dolore ex magnam reprehenderit,
-              placeat qui nesciunt dolores laborum sit quam rem repellat
-              corporis vero. Obcaecati, temporibus vitae.
+              Hello everyone 👋! Welcome to my university project, made with C++
+              and JavaScript for the backend. Leveraging the power of Appwrite,
+              a cutting-edge Backend-as-a-Service (BaaS)🚀. I hope you find it
+              as exciting and innovative as I do 🤗. Enjoy exploring!
             </p>
+
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <ShimmerButton onClick={downloadSource} className="shadow-2xl">
                 <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                   Download Source Code
-                </span>
-              </ShimmerButton>
-
-              <ShimmerButton
-                onClick={downloadExecutable}
-                className="shadow-2xl"
-              >
-                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  Download .exe File
                 </span>
               </ShimmerButton>
             </div>
