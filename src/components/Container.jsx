@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import RetroGrid from "@/components/magicui/retro-grid";
@@ -7,10 +7,12 @@ import CursorFollower from "./CursorFollower";
 import Square from "./Square";
 import ThemeToggler from "./ThemeToggler";
 import IntroScreen from "./IntroScreen";
+import UsersRegisterCount from "./UsersRegisterCount";
 
 const Container = () => {
   let duration = 2,
     delay = 5;
+
   useEffect(() => {
     gsap.from(".Container", {
       duration: duration,
@@ -121,6 +123,7 @@ const Container = () => {
           </div>
           <Square hw={100} t={{ x: "700px", y: "-20%" }} name={"2"} />
         </div>
+        <UsersRegisterCount />
       </div>
     </>
   );

@@ -59,6 +59,13 @@ body.light-theme {
     background-image: linear-gradient(to right, rgb(0 0 0) 1px, transparent 0),
       linear-gradient(to bottom, rgb(0 0 0) 1px, transparent 0);
   }
+  .counter>h1{
+    color:var(--Dark--Theme--Color);
+    text-shadow: 0 0 10px gray;
+  }
+  .CounterNumber{
+    color: var(--Dark--Theme--Color);
+  }
 }
 .intro-screen{
   background: var(--IntroScreen--Background);
@@ -104,6 +111,9 @@ p{
 }
 .SmallDevicesMessage--Container {
   display: none;
+}
+.CounterNumber{
+  color: var(--Light--Theme--Color);
 }
 @media screen and (max-width: 768px) {
   .SmallDevicesMessage--Container {
