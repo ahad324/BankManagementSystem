@@ -72,24 +72,16 @@ const UsersRegisterCount = () => {
   }, []);
 
   return (
-    <div
-      className="counter"
-      style={{
-        zIndex: "999",
-        position: "absolute",
-        fontSize: "2rem",
-        top: "90%",
-      }}
-    >
-      <h1>
-        Users Registered :
+    <div className="counter w-56 z-50 absolute text-2xl top-[90%] flex justify-center items-center">
+      <h1 className="font-semibold flex justify-center items-center">
+        Total Users :
         <SlotCounter
           value={count}
           duration={1.2}
           startValue={0}
           startValueOnce={true}
           debounceDelay={1}
-          numberClassName="CounterNumber"
+          numberClassName="CounterNumber font-semibold"
           animateOnVisible={{
             triggerOnce: false,
             rootMargin: "0px 0px -10px 0px",

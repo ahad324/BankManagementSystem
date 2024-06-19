@@ -61,7 +61,7 @@ body.light-theme {
   }
   .counter>h1{
     color:var(--Dark--Theme--Color);
-    text-shadow: 0 0 10px gray;
+
   }
   .CounterNumber{
     color: var(--Dark--Theme--Color);
@@ -114,6 +114,14 @@ p{
 }
 .CounterNumber{
   color: var(--Light--Theme--Color);
+}
+.counter{
+background: rgba(255, 255, 255, 0.28);
+border-radius: 16px;
+box-shadow: var(--Shadow);
+backdrop-filter: blur(7.6px);
+-webkit-backdrop-filter: blur(7.6px);
+border: 1px solid rgba(0, 0, 0, 0.3);
 }
 @media screen and (max-width: 768px) {
   .SmallDevicesMessage--Container {
