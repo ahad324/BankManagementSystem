@@ -72,7 +72,7 @@ const UsersRegisterCount = () => {
   }, []);
 
   return (
-    <div className="counter w-56 z-50 absolute text-2xl top-[90%] flex justify-center items-center">
+    <div className="counter w-[100%] z-50 absolute text-2xl top-[90%] flex justify-center items-center">
       <h1 className="font-semibold flex justify-center items-center">
         Total Users :
         <SlotCounter
@@ -81,6 +81,7 @@ const UsersRegisterCount = () => {
           startValue={0}
           startValueOnce={true}
           debounceDelay={1}
+          animateUnchanged={true}
           numberClassName="CounterNumber font-semibold"
           animateOnVisible={{
             triggerOnce: false,

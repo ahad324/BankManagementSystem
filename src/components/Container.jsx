@@ -107,7 +107,7 @@ const Container = () => {
               </i>
             </h1>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-4">
-              Hello everyone 👋! Welcome to my university project, made with C++
+              Hello everyone 👋! This is my university project, made with C++
               and JavaScript for the backend. Leveraging the power of Appwrite,
               a cutting-edge Backend-as-a-Service (BaaS)🚀. I hope you find it
               as exciting and innovative as I do 🤗. Enjoy exploring!

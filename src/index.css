@@ -4,7 +4,7 @@
 @tailwind utilities;
 :root {
   --Dark--Theme--Color: #050315;
-  --Light--Theme--Color:  linear-gradient(220.55deg, #FFF6EB 0%, #DFD1C5 100%);;
+  --Light--Theme--Color: linear-gradient(220.55deg, #fff6eb 0%, #dfd1c5 100%);
   --Light--Theme--TextColor: black;
   --Light--Theme--ContrastColor: var(--Light--Theme--TextColor);
   --Shadow: 0px 10px 22px 8px rgba(0, 0, 0, 0.1);
@@ -12,7 +12,7 @@
   --Gradient--For--DarkTheme: linear-gradient(to right, #a855f7, #ec4899);
   --bgBoxes-fill--LightTheme: var(--Light--Theme--ContrastColor);
   --bgBoxes-fill--DarkTheme: #a07cfe;
-  --IntroScreen--Background:#130e35;
+  --IntroScreen--Background: #130e35;
 }
 * {
   font-family: "Poppins", sans-serif;
@@ -59,15 +59,14 @@ body.light-theme {
     background-image: linear-gradient(to right, rgb(0 0 0) 1px, transparent 0),
       linear-gradient(to bottom, rgb(0 0 0) 1px, transparent 0);
   }
-  .counter>h1{
-    color:var(--Dark--Theme--Color);
-
+  .counter > h1 {
+    color: var(--Dark--Theme--Color);
   }
-  .CounterNumber{
+  .CounterNumber {
     color: var(--Dark--Theme--Color);
   }
 }
-.intro-screen{
+.intro-screen {
   background: var(--IntroScreen--Background);
   box-shadow: var(--Shadow);
 }
@@ -103,7 +102,7 @@ h1 {
   min-width: 650px;
   text-align: center;
 }
-p{
+p {
   font-weight: 400;
 }
 .Container {
@@ -112,16 +111,18 @@ p{
 .SmallDevicesMessage--Container {
   display: none;
 }
-.CounterNumber{
+.CounterNumber {
   color: var(--Light--Theme--Color);
 }
-.counter{
-background: rgba(255, 255, 255, 0.28);
-border-radius: 16px;
-box-shadow: var(--Shadow);
-backdrop-filter: blur(7.6px);
--webkit-backdrop-filter: blur(7.6px);
-border: 1px solid rgba(0, 0, 0, 0.3);
+.counter > h1 {
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 16px;
+  box-shadow: var(--Shadow);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  min-width: 15rem;
+  max-width: fit-content;
 }
 @media screen and (max-width: 768px) {
   .SmallDevicesMessage--Container {
