@@ -61,10 +61,18 @@ const Container = () => {
     });
   }, []);
 
-  const downloadSource = () => {
+  const downloadSourceforVS = () => {
     const link = document.createElement("a");
     link.href = "/BankManagementSystem.zip"; // The path to your ZIP file in the public directory
     link.download = "BankManagementSystem.zip";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  const downloadSourceforDEV = () => {
+    const link = document.createElement("a");
+    link.href = "/BankManagementSystemdev.zip"; // The path to your ZIP file in the public directory
+    link.download = "BankManagementSystemdev.zip";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -114,9 +122,20 @@ const Container = () => {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <ShimmerButton onClick={downloadSource} className="shadow-2xl">
+              <ShimmerButton
+                onClick={downloadSourceforVS}
+                className="shadow-2xl"
+              >
                 <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  Download Source Code
+                  Download code for VSCode
+                </span>
+              </ShimmerButton>
+              <ShimmerButton
+                onClick={downloadSourceforDEV}
+                className="shadow-2xl"
+              >
+                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                  Download code for DEV C++
                 </span>
               </ShimmerButton>
             </div>
