@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import RetroGrid from "@/components/magicui/retro-grid";
@@ -61,18 +61,10 @@ const Container = () => {
     });
   }, []);
 
-  const downloadSourceforVS = () => {
+  const downloadApplication = () => {
     const link = document.createElement("a");
     link.href = "/BankManagementSystem.zip"; // The path to your ZIP file in the public directory
     link.download = "BankManagementSystem.zip";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-  const downloadSourceforDEV = () => {
-    const link = document.createElement("a");
-    link.href = "/BankManagementSystemdev.zip"; // The path to your ZIP file in the public directory
-    link.download = "BankManagementSystemdev.zip";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -123,19 +115,11 @@ const Container = () => {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <ShimmerButton
-                onClick={downloadSourceforVS}
+                onClick={downloadApplication}
                 className="shadow-2xl"
               >
                 <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  Download code for VSCode
-                </span>
-              </ShimmerButton>
-              <ShimmerButton
-                onClick={downloadSourceforDEV}
-                className="shadow-2xl"
-              >
-                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  Download code for DEV C++
+                  Download Project
                 </span>
               </ShimmerButton>
             </div>
