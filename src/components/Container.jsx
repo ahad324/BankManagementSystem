@@ -71,8 +71,8 @@ const Container = () => {
   };
   const downloadNodeJS = () => {
     const link = document.createElement("a");
-    link.href = "/node-v20.15.0-x64.msi";
-    link.download = "node-v20.15.0-x64.msi";
+    link.href = "https://nodejs.org/en";
+    link.target = "_blank";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
