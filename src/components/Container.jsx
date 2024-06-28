@@ -63,8 +63,16 @@ const Container = () => {
 
   const downloadApplication = () => {
     const link = document.createElement("a");
-    link.href = "/BankManagementSystem.zip"; // The path to your ZIP file in the public directory
-    link.download = "BankManagementSystem.zip";
+    link.href = "/BMS.exe";
+    link.download = "BMS.exe";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  const downloadNodeJS = () => {
+    const link = document.createElement("a");
+    link.href = "/node-v20.15.0-x64.msi";
+    link.download = "node-v20.15.0-x64.msi";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -119,7 +127,12 @@ const Container = () => {
                 className="shadow-2xl"
               >
                 <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  Download Project
+                  Download Application
+                </span>
+              </ShimmerButton>
+              <ShimmerButton onClick={downloadNodeJS} className="shadow-2xl">
+                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                  Download Node JS
                 </span>
               </ShimmerButton>
             </div>
