@@ -8,6 +8,7 @@ import Square from "./Square";
 import ThemeToggler from "./ThemeToggler";
 import IntroScreen from "./IntroScreen";
 import UsersRegisterCount from "./UsersRegisterCount";
+import InstallationInstructions from "./InstallationInstructions";
 
 const Container = () => {
   let duration = 2,
@@ -135,6 +136,7 @@ const Container = () => {
                 </span>
               </ShimmerButton>
             </div>
+            <InstallationInstructions />
           </div>
           <Square hw={100} t={{ x: "700px", y: "-20%" }} name={"2"} />
         </div>
