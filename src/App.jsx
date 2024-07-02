@@ -1,12 +1,16 @@
 import React from "react";
-import Container from "./components/Container";
-import SmallDevicesMessage from "./components/SmallDevicesMessage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainPage from "./components/MainPage";
+import Logo from "./components/Logo";
+import "./index.css";
 function App() {
   return (
-    <>
-      <Container />
-      <SmallDevicesMessage />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/logo" element={<Logo />} />
+      </Routes>
+    </Router>
   );
 }
 
