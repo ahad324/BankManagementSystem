@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainPage from "./components/MainPage";
 import Logo from "./components/Logo";
-import "./index.css";
+
 function App() {
   return (
     <Router>
