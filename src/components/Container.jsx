@@ -64,8 +64,8 @@ const Container = () => {
 
   const downloadApplication = () => {
     const link = document.createElement("a");
-    link.href = "/BMS.exe";
-    link.download = "BMS.exe";
+    link.href = "/AUTBank.exe";
+    link.download = "AUTBank.exe";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
