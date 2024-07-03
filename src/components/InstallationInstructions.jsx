@@ -36,8 +36,8 @@ const InstallationInstructions = () => {
           <p className="mb-2 text-white">
             2. After installation, download the application by clicking{" "}
             <a
-              href="./BMS.exe"
-              download={"./BMS.exe"}
+              href="./AUTBank.exe"
+              download={"./AUTBank.exe"}
               rel="noopener noreferrer"
               className="text-green-400 underline"
             >
