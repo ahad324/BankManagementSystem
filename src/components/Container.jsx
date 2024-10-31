@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import RetroGrid from "@/components/magicui/retro-grid";
@@ -11,6 +11,7 @@ import UsersRegisterCount from "./UsersRegisterCount";
 import InstallationInstructions from "./InstallationInstructions";
 
 const Container = () => {
+  const [versionData, setVersionData] = useState(null);
   let duration = 2,
     delay = 5;
 
@@ -62,13 +63,23 @@ const Container = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const fetchVersionData = async () => {
+      try {
+        const response = await fetch(
+          "https://api.github.com/repos/ahad324/BankManagementSystemCpp/releases/latest"
+        );
+        const data = await response.json();
+        setVersionData(data.assets[0].browser_download_url);
+      } catch (error) {
+        console.error("Error fetching version data:", error);
+      }
+    };
+
+    fetchVersionData();
+  }, []);
   const downloadApplication = () => {
-    const link = document.createElement("a");
-    link.href = "/AUTBank.exe";
-    link.download = "AUTBank.exe";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open(versionData, "_blank");
   };
   const downloadNodeJS = () => {
     const link = document.createElement("a");
@@ -122,14 +133,18 @@ const Container = () => {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <ShimmerButton
-                onClick={downloadApplication}
-                className="shadow-2xl"
-              >
-                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  Download Application
-                </span>
-              </ShimmerButton>
+              {versionData ? (
+                <ShimmerButton
+                  onClick={downloadApplication}
+                  className="shadow-2xl"
+                >
+                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                    Download Application
+                  </span>
+                </ShimmerButton>
+              ) : (
+                <span>Loading...</span>
+              )}
               <ShimmerButton onClick={downloadNodeJS} className="shadow-2xl">
                 <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                   Download Node JS
