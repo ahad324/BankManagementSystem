@@ -8,7 +8,7 @@ import Square from "./Square";
 import ThemeToggler from "./ThemeToggler";
 import IntroScreen from "./IntroScreen";
 import UsersRegisterCount from "./UsersRegisterCount";
-import InstallationInstructions from "./InstallationInstructions";
+import { IoLogoWindows } from "react-icons/io5";
 
 const Container = () => {
   const [versionData, setVersionData] = useState(null);
@@ -81,13 +81,6 @@ const Container = () => {
   const downloadApplication = () => {
     window.open(versionData, "_blank");
   };
-  const downloadNodeJS = () => {
-    const link = document.createElement("a");
-    link.href = "https://nodejs.org/dist/v20.15.0/node-v20.15.0-x64.msi";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <>
@@ -113,7 +106,7 @@ const Container = () => {
           </div>
           <div className="text--card flex flex-col justify-center items-center h-full w-full">
             <h1 className="text-5xl font-[900] tracking-tighter text-black dark:text-white relative">
-              <span className="GradientText">Bank Management </span>
+              <span className="GradientText">AUT </span>
               <i
                 className="Hollow--Text text-transparent"
                 style={{
@@ -122,7 +115,7 @@ const Container = () => {
                   zIndex: 2,
                 }}
               >
-                System
+                Finance Bank
               </i>
             </h1>
             <p className="text-lg text-gray-700 dark:text-gray-300 mt-4">
@@ -138,20 +131,15 @@ const Container = () => {
                   onClick={downloadApplication}
                   className="shadow-2xl"
                 >
-                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                    Download Application
+                  <span className="flex justify-between items-center whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                    <IoLogoWindows className="mr-2" />
+                    Download for Windows
                   </span>
                 </ShimmerButton>
               ) : (
                 <span>Loading...</span>
               )}
-              <ShimmerButton onClick={downloadNodeJS} className="shadow-2xl">
-                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  Download Node JS
-                </span>
-              </ShimmerButton>
             </div>
-            <InstallationInstructions />
           </div>
           <Square hw={100} t={{ x: "700px", y: "-20%" }} name={"2"} />
         </div>

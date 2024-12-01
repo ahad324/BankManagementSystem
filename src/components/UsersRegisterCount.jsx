@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Client, Databases } from "appwrite";
+import {
+  client,
+  databases,
+  DATABASE_ID,
+  COLLECTION_ID_USERS,
+} from "../AppwriteConfigs";
 import { gsap } from "gsap";
 import SlotCounter from "react-slot-counter";
-
-const PROJECT_ID = "666b2d4b002579cc85ea";
-const DATABASE_ID = "666b30e2001dda7640db";
-const COLLECTION_ID_USERS = "666caf8d003db35e8a54";
-
-const client = new Client();
-client.setEndpoint("https://cloud.appwrite.io/v1").setProject(PROJECT_ID);
-const databases = new Databases(client);
 
 const UsersRegisterCount = () => {
   const [count, setcount] = useState(0);

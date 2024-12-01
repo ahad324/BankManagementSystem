@@ -2,7 +2,7 @@ import React from "react";
 import SmallDevicesMessage from "./SmallDevicesMessage";
 import Container from "./Container";
 
-const MainPage = () => {
+const Home = () => {
   return (
     <>
       <Container />
@@ -11,4 +11,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default Home;
